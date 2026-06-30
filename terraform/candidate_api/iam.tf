@@ -49,7 +49,6 @@ data "aws_iam_policy_document" "lambda_policy" {
     ]
 
     resources = [
-      module.s3["resume"].bucket_arn,
       "${module.s3["resume"].bucket_arn}/*"
     ]
   }
@@ -62,8 +61,7 @@ data "aws_iam_policy_document" "lambda_policy" {
 
     actions = [
       "dynamodb:GetItem",
-      "dynamodb:PutItem",
-      "dynamodb:UpdateItem"
+      "dynamodb:PutItem"
     ]
 
     resources = [
