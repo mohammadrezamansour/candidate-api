@@ -1,3 +1,14 @@
+terraform {
+  required_version = ">= 1.15.7"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.52"
+    }
+  }
+}
+
 data "aws_region" "current" {}
 
 resource "aws_apigatewayv2_api" "this" {
@@ -10,7 +21,6 @@ resource "aws_apigatewayv2_api" "this" {
 resource "aws_apigatewayv2_integration" "this" {
 
   api_id = aws_apigatewayv2_api.this.id
-  integration_method = "POST"
   integration_type = "AWS_PROXY"
   payload_format_version = "2.0"
   integration_uri = var.config.lambda_invoke_arn
