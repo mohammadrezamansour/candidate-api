@@ -1,14 +1,9 @@
 output "table_name" {
-  description = "DynamoDB table name"
+  description = "The name of the DynamoDB table."
   value       = aws_dynamodb_table.this.name
 }
 
 output "table_arn" {
-  description = "DynamoDB table ARN"
+  description = "The ARN of the DynamoDB table."
   value       = aws_dynamodb_table.this.arn
-}
-
-output "table_id" {
-  description = "DynamoDB table ID"
-  value       = aws_dynamodb_table.this.id
 }
