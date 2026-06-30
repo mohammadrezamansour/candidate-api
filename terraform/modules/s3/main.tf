@@ -10,7 +10,7 @@ terraform {
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket = "${var.config.bucket_prefix}-${var.config.bucket_name}"
+  bucket = var.config.bucket_name
   force_destroy = var.config.force_destroy
   tags = var.config.tags
 }

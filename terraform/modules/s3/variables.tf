@@ -3,11 +3,10 @@ variable "config" {
 
   type = object({
     bucket_name       = string
-    bucket_prefix     = string
-    force_destroy     = bool
-    enable_versioning = bool
-    enable_encryption = bool
-    sse_algorithm     = string
+    force_destroy     = optional(bool, false)
+    enable_versioning = optional(bool, false)
+    enable_encryption = optional(bool, true)
+    sse_algorithm     = optional(string, "AES256")
     tags              = map(string)
   })
 
