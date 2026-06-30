@@ -1,3 +1,18 @@
+terraform {
+  required_version = ">= 1.15.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.52"
+    }
+    archive = {
+      source  = "hashicorp/archive"
+      version = "~> 2.8"
+    }
+  }
+}
+
 data "archive_file" "lambda" {
   type = "zip"
 

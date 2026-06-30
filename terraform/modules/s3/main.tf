@@ -1,3 +1,14 @@
+terraform {
+  required_version = ">= 1.15.7"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.52"
+    }
+  }
+}
+
 resource "aws_s3_bucket" "this" {
   bucket = "${var.config.bucket_prefix}-${var.config.bucket_name}"
   force_destroy = var.config.force_destroy
