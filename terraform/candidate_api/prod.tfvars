@@ -83,7 +83,7 @@ cognito = {
 
 
   domain = "candidate-api-auth"
-  scope_name                 = "acces"
+  scope_name                 = "access"
   scope_description          = "Access Candidate API"
 
 
