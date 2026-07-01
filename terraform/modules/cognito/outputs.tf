@@ -12,3 +12,8 @@ output "client_secret" {
   description = "The client secret of the Cognito User Pool client."
   value       = aws_cognito_user_pool_client.this.client_secret
 }
+
+output "domain" {
+  description = "Cognito user pool domain prefix used to build the OAuth2 token endpoint URL"
+  value       = aws_cognito_user_pool_domain.this.domain
+}

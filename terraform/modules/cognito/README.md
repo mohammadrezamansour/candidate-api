@@ -28,7 +28,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 | ---- | ----------- | ---- | ------- | :------: |
-| <a name="input_config"></a> [config](#input\_config) | Cognito configuration | <pre>object({<br/><br/>    user_pool_name = string<br/><br/>    client_name = string<br/><br/>    resource_server_identifier = string<br/><br/>    resource_server_name       = string<br/><br/>    domain = string<br/><br/>    tags = map(string)<br/><br/>  })</pre> | n/a | yes |
+| <a name="input_config"></a> [config](#input\_config) | Cognito configuration | <pre>object({<br/><br/>    user_pool_name = string<br/>    client_name = string<br/>    resource_server_identifier = string<br/>    resource_server_name       = string<br/>    scope_name                 = string<br/>    scope_description          = string<br/>    domain = string<br/><br/>    tags = map(string)<br/><br/>  })</pre> | n/a | yes |
 
 ## Outputs
 
@@ -36,4 +36,5 @@ No modules.
 | ---- | ----------- |
 | <a name="output_client_id"></a> [client\_id](#output\_client\_id) | The ID of the Cognito User Pool client. |
 | <a name="output_client_secret"></a> [client\_secret](#output\_client\_secret) | The client secret of the Cognito User Pool client. |
+| <a name="output_domain"></a> [domain](#output\_domain) | Cognito user pool domain prefix used to build the OAuth2 token endpoint URL |
 | <a name="output_user_pool_id"></a> [user\_pool\_id](#output\_user\_pool\_id) | The ID of the Cognito User Pool. |

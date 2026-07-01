@@ -18,3 +18,8 @@ output "cognito_user_pool_id" {
   description = "Cognito User Pool ID"
   value       = module.cognito.user_pool_id
 }
+
+output "cognito_domain" {
+  description = "Cognito domain prefix — token endpoint: https://<domain>.auth.eu-west-3.amazoncognito.com/oauth2/token"
+  value       = module.cognito.domain
+}
