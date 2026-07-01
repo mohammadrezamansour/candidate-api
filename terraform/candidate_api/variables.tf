@@ -44,8 +44,8 @@ variable "lambda" {
   description = "Lambda configuration"
 
   type = object({
-    runtime       = string
-    handler       = string
+    runtime = string
+    handler = string
 
     source_dir = string
 
@@ -79,10 +79,10 @@ variable "cognito" {
 
   type = object({
 
-    domain = string
-    scope_name = string
+    domain            = string
+    scope_name        = string
     scope_description = string
-    tags = optional(map(string), {})
+    tags              = optional(map(string), {})
 
   })
 }

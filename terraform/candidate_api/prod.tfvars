@@ -82,9 +82,9 @@ api_gateway = {
 cognito = {
 
 
-  domain = "candidate-api-auth"
-  scope_name                 = "access"
-  scope_description          = "Access Candidate API"
+  domain            = "candidate-api-auth"
+  scope_name        = "access"
+  scope_description = "Access Candidate API"
 
 
 }

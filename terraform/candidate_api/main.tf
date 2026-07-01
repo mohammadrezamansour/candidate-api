@@ -5,7 +5,7 @@ module "s3" {
 
   config = merge(each.value, {
     bucket_name = local.name
-    tags = merge(local.default_tags, each.value.tags)
+    tags        = merge(local.default_tags, each.value.tags)
   })
 }
 module "dynamodb" {
@@ -15,7 +15,7 @@ module "dynamodb" {
 
   config = merge(each.value, {
     table_name = local.name
-    tags = merge(local.default_tags, each.value.tags)
+    tags       = merge(local.default_tags, each.value.tags)
   })
 }
 module "lambda" {
@@ -78,7 +78,7 @@ module "cognito" {
 
     domain = var.cognito.domain
 
-    scope_name = var.cognito.scope_name
+    scope_name        = var.cognito.scope_name
     scope_description = var.cognito.scope_description
 
     tags = merge(local.default_tags, var.cognito.tags)
