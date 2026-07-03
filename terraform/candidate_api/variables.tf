@@ -86,3 +86,9 @@ variable "cognito" {
 
   })
 }
+variable "iam_tags" {
+  type        = map(string)
+  description = "Tags for iam roles"
+  default     = {}
+
+}

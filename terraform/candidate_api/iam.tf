@@ -76,7 +76,7 @@ resource "aws_iam_role" "lambda" {
 
   assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
 
-  tags = local.default_tags
+  tags = merge(local.default_tags, var.iam_tags)
 }
 
 
@@ -86,7 +86,7 @@ resource "aws_iam_policy" "lambda" {
 
   policy = data.aws_iam_policy_document.lambda_policy.json
 
-  tags = local.default_tags
+  tags = merge(local.default_tags, var.iam_tags)
 }
 
 resource "aws_iam_role_policy_attachment" "lambda" {
