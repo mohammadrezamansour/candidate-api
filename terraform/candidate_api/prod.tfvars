@@ -1,6 +1,6 @@
 environment = "prod"
 
-project_name = "candidate-api"
+project_name = "candidate-api-project"
 
 s3_buckets = {
   resume = {

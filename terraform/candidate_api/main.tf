@@ -4,7 +4,7 @@ module "s3" {
   for_each = var.s3_buckets
 
   config = merge(each.value, {
-    bucket_name = local.name
+    bucket_name = "${local.name}-${each.key}"
     tags        = merge(local.default_tags, each.value.tags)
   })
 }
@@ -14,7 +14,7 @@ module "dynamodb" {
   for_each = var.dynamodb_tables
 
   config = merge(each.value, {
-    table_name = local.name
+    table_name = "${local.name}-${each.key}"
     tags       = merge(local.default_tags, each.value.tags)
   })
 }
